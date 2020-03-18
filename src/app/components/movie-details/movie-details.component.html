@@ -1,0 +1,35 @@
+
+<div *ngIf="peliculaId" class="row">
+
+    <div class="col-md-12" >
+        <div  class="row">
+            <div class="col-12" style="margin-left: 6%;">
+                <button class="mdc-button" [routerLink]="['/home']">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Regresar</span>
+                  </button>
+            </div>
+            <div class="col-4">
+              <img width="100%" src="https://image.tmdb.org/t/p/w300/{{peliculaId.poster_path}}" style="width: 56%;margin-left: 20% !important;" alt="{{peliculaId.poster_path}}">
+            </div>
+            <div class="col-8">
+              <h1>{{peliculaId.title}}</h1>
+              <p>{{peliculaId.overview}}</p>
+              <h2>Titulo original: {{peliculaId.original_title}}</h2>
+              <h2 class="uk-text-muted">Popularidad: {{peliculaId.popularity}}</h2>
+              <h2 class="uk-text-muted">Cantidad de votos: {{peliculaId.vote_count}}</h2>
+              <h2 class="uk-text-muted">Promedio: {{peliculaId.vote_average}}</h2>
+              <h2 class="uk-text-muted">Fecha lanzamiento: {{peliculaId.release_date | date: 'medium' }}</h2>
+            </div>
+          </div>
+        
+        </div>
+
+        <div class="col-md-4">   
+          
+            </div>
+</div>
+
+<div *ngIf="!peliculaId">
+    Cargando...
+</div>

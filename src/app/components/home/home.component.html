@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <a class="navbar-brand">Principales Peliculas</a>
+      </div>
+    </div>
+</nav>
+
+<div style="margin-left: 37%;">
+  <button #btn1 id="btn1" class="mdc-button" (click)="getPopulares('Populares')">
+    <div   class="mdc-button__ripple"  ></div>
+    <span  class="mdc-button__label" >Populares</span>
+  </button>
+  
+  <button #btn2 id="btn2" class="mdc-button" (click)="getPopulares('Teatros')">
+    <div class="mdc-button__ripple"></div>
+    <span class="mdc-button__label">Teatros</span>
+  </button>
+  
+  <button #btn3 id="btn3" class="mdc-button" (click)="getPopulares('Infantiles')" >
+    <div class="mdc-button__ripple"></div>
+    <span class="mdc-button__label">Infantiles</span>
+  </button>
+</div>
+
+<!-- <div *ngIf="loading" class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   
+  </button>
+   Espere por favor cargando peliculas
+</div> -->
+
+
+<div class="row" >
+
+  <div  class="col-md-4" *ngFor="let popular of peliculaesGenero; let i = index" >
+   
+     <div class="mdc-card demo-card mt-5" style="width: 70% !important;">
+      <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
+        <div class="mdc-card__media mdc-card__media--10-9 demo-card__media mt-4">
+          <!-- <img src="https://image.tmdb.org/t/p/w300/{{popular.poster_path}}"  (click)="verDetallePelicula(popular.id)"  style="width: 56%;margin-left: 20% !important;"> -->
+          <img [src]="popular | img"  (click)="verDetallePelicula(popular.id)"  style="width: 56%;margin-left: 20% !important;">
+        </div>
+        <div class="demo-card__primary">
+          <h2 class="demo-card__title mdc-typography mdc-typography--headline6" style="margin-left: 1%; text-align: center;">{{popular.original_title}}</h2>
+         </div>
+        <div class="demo-card__secondary mdc-typography mdc-typography--body2" style="margin-left: 1%; text-align: center;">Fecha de lanzamiento {{popular.release_date}}</div>
+      </div>
+      <div class="mdc-card__actions" style="justify-content: center;" >
+        <div class="mdc-card__action-buttons">
+          <button class="mdc-button mdc-card__action mdc-card__action--button"  (click)="verDetallePelicula(popular.id) ">  <span class="mdc-button__ripple"></span> Detalles</button>
+        </div>
+      </div>
+    </div> 
+    
+  </div>
+
+</div>
+

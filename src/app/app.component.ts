@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MovieTemplate';
+
+
+  public peliculaRecibida: any;
+
+  reciebiendoPelicula(event){
+     this.peliculaRecibida = event;
+     console.log(' this.data = event; ', event );
+     console.log(' peliculaRecibida; ', this.peliculaRecibida );
+  }
 }

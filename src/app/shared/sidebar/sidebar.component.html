@@ -1,0 +1,45 @@
+
+<div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+  <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+-->
+  <div class="logo" [routerLink]="['/home']" >
+      Movie App
+    </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="nav-item" style="cursor: pointer;"  routerLink="active" (click)="irPorFecha('2019')">
+        <a class="nav-link "  >
+          <i class="material-icons">folder</i>
+          <p>2019</p>
+        </a>
+      </li>
+      <li class="nav-item " style="cursor: pointer;" routerLink="active" (click)="irPorFecha('2018')">
+        <a class="nav-link" >
+          <i class="material-icons">folder</i>
+          <p>2018</p>
+        </a>
+      </li>
+      <li class="nav-item " style="cursor: pointer;" routerLink="active" (click)="irPorFecha('2017')">
+        <a class="nav-link" >
+          <i class="material-icons">folder</i>
+          <p>2017</p>
+        </a>
+      </li>
+      <li class="nav-item " style="cursor: pointer;" routerLink="active" (click)="irPorFecha('2016')">
+        <a class="nav-link" >
+          <i class="material-icons">folder</i>
+          <p>2016</p>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<app-navbar style=" overflow-y:hidden; overflow-x:hidden;" class="main-panel" (peliculaBuscada)='recibiendoPelicula($event)'>
+
+ 
+</app-navbar>
